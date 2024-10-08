@@ -14,6 +14,10 @@ protected:
 	string name;
 	
 public:
+	Instrument(string name, int price) {
+		this->name = name;
+		this->price = price;
+	}
 	int GetPrice() {
 		return price;
 	}
@@ -26,12 +30,18 @@ public:
 };
 class Piano : public Instrument {
 public:
+	Piano(string name, int price) : Instrument(name, price) {
+
+	}
 	void MakeSound() override {
 		cout << "\nPlink" << endl;
 	}
 };
 class Triangle : public Instrument {
 public:
+	Triangle(string name, int price) : Instrument(name, price) {
+
+	}
 	void MakeSound() override {
 		cout << "\nDinnnng" << endl;
 	}
@@ -39,6 +49,9 @@ public:
 
 class Drums : public Instrument {
 public:
+	Drums(string name, int price) : Instrument(name, price) {
+
+	}
 	void MakeSound() override {
 		cout << "\nBadum Tss" << endl;
 	}
